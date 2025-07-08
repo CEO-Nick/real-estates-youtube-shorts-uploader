@@ -15,7 +15,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Table(name = "members")
 public class Member {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(unique = true, nullable = false)
@@ -27,7 +27,7 @@ public class Member {
     @Column(nullable = false)
     private String name;
 
-    @Embedded private RealEstateInfo realEstateInfo;
+    @Embedded private RealEstateProfile realEstateProfile;
 
     @CreationTimestamp private LocalDateTime createdAt;
 
