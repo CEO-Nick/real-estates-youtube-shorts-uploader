@@ -5,13 +5,21 @@ import java.math.BigDecimal;
 
 @Embeddable
 public class PropertyDetails {
-    private String apartmentName;
+    // **아파트
+    private String name;
 
-    private String dongHo;
+    // **동
+    private Integer dongNumber;
 
-    private BigDecimal salePrice;
+    // **호
+    private Integer hoNumber;
 
-    private String propertyType;
+    // 7억 8천 5백 -> 785,000,000
+    private Long salePrice;
 
+    // 매물 타입
+    private String type;
+
+    // 매물 특징
     private String specialFeatures;
 }
