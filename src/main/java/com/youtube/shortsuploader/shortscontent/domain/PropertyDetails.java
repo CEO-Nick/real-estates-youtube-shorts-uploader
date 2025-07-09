@@ -1,7 +1,6 @@
 package com.youtube.shortsuploader.shortscontent.domain;
 
 import jakarta.persistence.Embeddable;
-import java.math.BigDecimal;
 
 @Embeddable
 public class PropertyDetails {
