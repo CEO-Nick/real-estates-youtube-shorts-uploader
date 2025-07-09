@@ -1,35 +1,35 @@
-package com.youtube.shortsuploader.member.domain;
+package com.youtube.shortsuploader.shortscontent.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "members")
-public class Member {
+@Table(name = "ImageInfo")
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+public class ImageInfo {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Enumerated(value = EnumType.STRING)
-    private AuthPlatform platform;
+    private String imageUrl;
 
-    @Column(nullable = false)
-    private String email;
+    private String originalFilename;
 
-    @Column(nullable = false)
-    private String name;
-
-    @Embedded private RealEstateProfile realEstateProfile;
+    private Integer displayOrder;
 
     @CreationTimestamp private LocalDateTime createdAt;
 
